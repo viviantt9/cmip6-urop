@@ -1,36 +1,35 @@
 # Pangeo Gallery Template
 
+Authors:
+Vivian Trenh, MIT 
 
 This repository stores an example gallery repo for the Pangeo Gallery.
 To access, download folder and open in jupyter lab.
-Main use of this repo is to query and download data from cmip6 models to be used to create deep-learning models.
+Main use of this repo is to query and download data from CMIP6 models to be used to create deep-learning models.
 
-
-The repo contains the following elements:
-
+## Content
 - A set of jupyter notebooks
-  - basic_search_and_load: query for data from cmip6 -> store data and/or create animation 
-  - ECS_Gregory_Method: uses "Gregory method" to approximate ECS of CMIP6 models based on first 150 years after abrupt quadrupling of CO2 concentrations
-  - global_mean_surface_temp: calculates global mean surface temp using similar methods to "Gregory method"
-  - intake_ESM_example: experimental way to query cmip6 data; still unstable
-  - precip_frequency_change: calculate the distribution of precipitation intensity
-- numpy files containing 3D arrays of lat, lon, time, and variable (instructions on extracting this info below)
+  - [basic_search_and_load](basic_search_and_load.ipynb): Queries, stores, and animates CMIP6 data
+  - [ECS_Gregory_method](ECS_Gregory_method.ipynb): Approximate the equilibrium climate sensitivity (ECS) of CMIP6 models via the "Gregory method" using the first 150 years after abrupt quadrupling of CO2 concentrations 
+  - [global_mean_surface_temp](global_mean_surface_temp.ipynb): Calculates the global mean surface temperature using similar methods to "Gregory method"
+  - [intake_ESM_example](intake_ESM_example.ipynb): Queries CMIP6 data; experimental and still unstable
+  - [precip_frequency_change](precip_frequency_change.ipynb): Calculate the distribution of precipitation intensity
+- Numpy files containing 3D arrays of lat, lon, time, and variable (instructions on extracting this info below)
 - A configuration file, `binder-gallery.yaml`, which provides important
   configuration parameters (see [pangeo gallery documentation](http://gallery.pangeo.io)).
 - A thumbnail image (`thumbnail.png`), a 200 x 200 px image which represents
   the gallery content.
 - Github workflows, which make the magic happen! (Don't touch these.)
 
-
-Search and Download Data
+## Instruction on Searching and Downloading Data
 - Explore Data:
-  - Read thorough this: https://docs.google.com/document/d/1yUx6jr9EdedCOLd--CPdTfGDwEwzPpCF6p1jRmqx-0Q/edit#
-  - Search through this for variable descriptions: https://docs.google.com/spreadsheets/d/1UUtoz6Ofyjlpx5LdqhKcwHFz2SGoTQV2_yekHyMfL9Y/edit#gid=1221485271
-  - Explore data more throughly here: https://esgf-node.llnl.gov/search/cmip6/
-- Go to basic_search_and_load.ipy
-- Query data using desired filters
-  - need only three filters (experiment_id, table_id, variable_id) but can use more if needed
-  - default values should be "activity_id=='CMIP' & table_id == 'Amon' & variable_id == 'tas' & experiment_id == 'historical'"
-- scroll down to for loop where data is saved as numpy then stored into a numppy file
-  - change numpy file name to desired name 
-  - change data variables to new variable_id (replace all the "tas" with new variable_id)
+  - Read thorough [link](https://docs.google.com/document/d/1yUx6jr9EdedCOLd--CPdTfGDwEwzPpCF6p1jRmqx-0Q/edit#)
+  - Search through [link](https://docs.google.com/spreadsheets/d/1UUtoz6Ofyjlpx5LdqhKcwHFz2SGoTQV2_yekHyMfL9Y/edit#gid=1221485271) for variable descriptions.
+  - Explore data more throughly [link](https://esgf-node.llnl.gov/search/cmip6/)
+- Go to [basic_search_and_load](basic_search_and_load.ipynb)
+- Query data using desired filters:
+  - Need only three filters (experiment_id, table_id, variable_id) but can use more if needed
+  - Default values should be "activity_id=='CMIP' & table_id == 'Amon' & variable_id == 'tas' & experiment_id == 'historical'"
+- Scroll down to for loop where data is saved as numpy then stored into a numpy file
+  - Change numpy file name to desired name 
+  - Change data variables to new variable_id (replace all the "tas" with new variable_id)
