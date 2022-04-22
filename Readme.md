@@ -1,11 +1,13 @@
 # Pangeo Gallery Template
 
-Authors:
-Vivian Trenh, MIT 
-
 This repository stores an example gallery repo for the Pangeo Gallery.
 To access, download folder and open in jupyter lab.
 Main use of this repo is to query and download data from CMIP6 models to be used to create deep-learning models.
+
+## Installation
+```
+conda env create -f environment.yml
+```
 
 ## Content
 - Notebooks to preprocess and download CMIP6 data:
@@ -33,21 +35,3 @@ Main use of this repo is to query and download data from CMIP6 models to be used
 - Scroll down to for loop where data is saved as numpy then stored into a numpy file
   - Change numpy file name to desired name 
   - Change data variables to new variable_id (replace all the "tas" with new variable_id)
-
-## Installation
-```
-conda env create -f environment.yml
-```
-conda create --name cmip6-urop python numpy pandas xarray cartopy zarr
-pip install jupyter
-pip install --upgrade jupyterhub
-pip install --upgrade --user nbconvert
-conda install -c conda-forge fsspec
-conda install -c conda-forge gcsfs
-conda install -c conda-forge cftime
-conda install -c conda-forge tqdm
-conda install -c conda-forge ffmpeg
-conda install -c conda-forge nodejs # Test to make tqdm work
-
-Create the env file: conda env export > environment.yml
-
